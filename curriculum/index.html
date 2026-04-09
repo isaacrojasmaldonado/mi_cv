@@ -1,0 +1,645 @@
+git rebase --continue<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Isaac Daniel Rojas Maldonado</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --cp-yellow: #fcef01;
+            --cp-cyan: #00f0ff;
+            --cp-red: #ff003c;
+            --cp-dark: #050505;
+            --cp-darker: #010101;
+            --cp-light: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--cp-darker);
+            color: var(--cp-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image:
+                linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-position: center center;
+            position: relative;
+        }
+
+        /* Scanline Overlay */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0),
+                    rgba(255, 255, 255, 0) 50%,
+                    rgba(0, 0, 0, 0.1) 50%,
+                    rgba(0, 0, 0, 0.1));
+            background-size: 100% 4px;
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            position: relative;
+            padding: 40px;
+            z-index: 1;
+        }
+
+        .container::before {
+            content: "SYSTEM_ID: IDR-M//2077";
+            position: absolute;
+            top: -20px;
+            left: 0;
+            color: var(--cp-cyan);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-shadow: 0 0 8px var(--cp-cyan);
+        }
+
+        header {
+            border-left: 10px solid var(--cp-yellow);
+            padding-left: 25px;
+            margin-bottom: 50px;
+            position: relative;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        header::after {
+            content: "V.1.0_ONLINE";
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: var(--cp-yellow);
+            color: var(--cp-darker);
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: bold;
+            padding: 2px 10px;
+            font-size: 0.8rem;
+        }
+
+        .glitch-wrapper {
+            position: relative;
+        }
+
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            color: var(--cp-yellow);
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 8px;
+            text-shadow: 3px 3px 0px var(--cp-red), -3px -3px 0px var(--cp-cyan);
+            position: relative;
+            letter-spacing: -2px;
+        }
+
+        /* Base Glitch Effect for Title */
+        h1::before,
+        h1::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--cp-darker);
+            overflow: hidden;
+        }
+
+        h1::before {
+            left: 3px;
+            text-shadow: -2px 0 var(--cp-red);
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim 3s infinite linear alternate-reverse;
+        }
+
+        h1::after {
+            left: -3px;
+            text-shadow: -2px 0 var(--cp-cyan);
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim 2.5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(22px, 9999px, 86px, 0);
+            }
+
+            5% {
+                clip: rect(61px, 9999px, 81px, 0);
+            }
+
+            10% {
+                clip: rect(78px, 9999px, 63px, 0);
+            }
+
+            15% {
+                clip: rect(66px, 9999px, 87px, 0);
+            }
+
+            20% {
+                clip: rect(27px, 9999px, 3px, 0);
+            }
+
+            25% {
+                clip: rect(4px, 9999px, 18px, 0);
+            }
+
+            30% {
+                clip: rect(100px, 9999px, 52px, 0);
+            }
+
+            35% {
+                clip: rect(87px, 9999px, 16px, 0);
+            }
+
+            40% {
+                clip: rect(86px, 9999px, 8px, 0);
+            }
+
+            45% {
+                clip: rect(21px, 9999px, 20px, 0);
+            }
+
+            50% {
+                clip: rect(13px, 9999px, 28px, 0);
+            }
+
+            55% {
+                clip: rect(72px, 9999px, 88px, 0);
+            }
+
+            60% {
+                clip: rect(19px, 9999px, 34px, 0);
+            }
+
+            65% {
+                clip: rect(23px, 9999px, 3px, 0);
+            }
+
+            70% {
+                clip: rect(32px, 9999px, 1px, 0);
+            }
+
+            75% {
+                clip: rect(60px, 9999px, 33px, 0);
+            }
+
+            80% {
+                clip: rect(89px, 9999px, 51px, 0);
+            }
+
+            85% {
+                clip: rect(54px, 9999px, 45px, 0);
+            }
+
+            90% {
+                clip: rect(87px, 9999px, 66px, 0);
+            }
+
+            95% {
+                clip: rect(56px, 9999px, 21px, 0);
+            }
+
+            100% {
+                clip: rect(1px, 9999px, 7px, 0);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: var(--cp-cyan);
+            font-family: 'Share Tech Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+            display: inline-block;
+            background: rgba(0, 240, 255, 0.1);
+            padding: 5px 15px;
+            border: 1px solid var(--cp-cyan);
+        }
+
+        .section-wrapper {
+            margin-bottom: 35px;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            background: linear-gradient(135deg, rgba(3, 15, 26, 0.9) 0%, rgba(5, 5, 5, 0.95) 100%);
+            position: relative;
+            padding: 2px;
+            /* acts as border for child */
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .section-wrapper:hover {
+            border: 1px solid var(--cp-cyan);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .section-inner {
+            background-color: var(--cp-dark);
+            padding: 30px;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
+            height: 100%;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--cp-yellow);
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            display: inline-block;
+            position: relative;
+            padding-right: 25px;
+            text-shadow: 0 0 5px rgba(252, 239, 1, 0.5);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            background-color: var(--cp-red);
+            box-shadow: 0 0 12px var(--cp-red);
+            transform: translateY(-50%);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .container {
+                padding: 20px;
+                margin: 20px auto;
+            }
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1.15rem;
+        }
+
+        li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--cp-red);
+            font-weight: bold;
+            font-family: 'Share Tech Mono', monospace;
+            text-shadow: 0 0 5px var(--cp-red);
+        }
+
+        .contact-info li {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.05rem;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 8px 8px 8px 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-info li:hover {
+            background: rgba(0, 240, 255, 0.1);
+            border-bottom: 1px solid var(--cp-cyan);
+            color: #fff;
+        }
+
+        .contact-info strong {
+            color: var(--cp-cyan);
+            display: inline-block;
+            width: 90px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            text-shadow: 0 0 1px rgba(224, 224, 224, 0.3);
+        }
+
+        .highlight-red {
+            color: var(--cp-red);
+            text-shadow: 0 0 10px rgba(255, 0, 60, 0.8);
+            font-weight: bold;
+        }
+
+        .highlight-cyan {
+            color: var(--cp-cyan);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
+            font-weight: bold;
+        }
+
+        .highlight-yellow {
+            color: var(--cp-yellow);
+            text-shadow: 0 0 10px rgba(252, 239, 1, 0.8);
+            font-weight: bold;
+        }
+
+        .timeline-item {
+            border-left: 2px solid var(--cp-red);
+            padding-left: 25px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background-color: var(--cp-yellow);
+            box-shadow: 0 0 15px var(--cp-yellow);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            /* Rhombus */
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .timeline-subtitle {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--cp-cyan);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            background: rgba(0, 240, 255, 0.1);
+            display: inline-block;
+            padding: 2px 8px;
+            border-left: 3px solid var(--cp-cyan);
+        }
+
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .badge {
+            background-color: transparent;
+            border: 1px solid var(--cp-yellow);
+            color: var(--cp-yellow);
+            padding: 8px 15px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(252, 239, 1, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .badge:hover::before {
+            left: 100%;
+        }
+
+        .badge:hover {
+            background-color: var(--cp-yellow);
+            color: var(--cp-darker);
+            box-shadow: 0 0 20px var(--cp-yellow);
+            font-weight: bold;
+        }
+
+        .badge.cyan-badge {
+            border-color: var(--cp-cyan);
+            color: var(--cp-cyan);
+        }
+
+        .badge.cyan-badge::before {
+            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.4), transparent);
+        }
+
+        .badge.cyan-badge:hover {
+            background-color: var(--cp-cyan);
+            color: var(--cp-darker);
+            box-shadow: 0 0 20px var(--cp-cyan);
+        }
+
+        .btn-cyber {
+            display: block;
+            background-color: var(--cp-yellow);
+            color: var(--cp-darker);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 15px 40px;
+            border: none;
+            position: relative;
+            cursor: crosshair;
+            clip-path: polygon(25px 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%, 0 25px);
+            transition: all 0.3s;
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+            box-shadow: 0 0 30px rgba(252, 239, 1, 0.3);
+            text-decoration: none;
+        }
+
+        .btn-cyber:hover {
+            background-color: var(--cp-cyan);
+            color: var(--cp-darker);
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.6);
+            transform: scale(1.02);
+        }
+
+        .btn-cyber::after {
+            content: 'SYS_STATUS: READY';
+            position: absolute;
+            bottom: -5px;
+            right: 20px;
+            font-size: 0.8rem;
+            color: var(--cp-darker);
+            font-family: 'Share Tech Mono', monospace;
+            background: transparent;
+            font-weight: bold;
+        }
+
+        .btn-cyber::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+
+        .btn-cyber:hover::before {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="glitch-wrapper">
+                <h1 data-text="ISAAC DANIEL ROJAS">ISAAC DANIEL ROJAS</h1>
+            </div>
+            <div class="subtitle">ESTUDIANTE DE ING. EN SISTEMAS INFORMÁTICOS // LVL 6</div>
+        </header>
+
+        <div class="grid-2">
+            <!-- Datos Personales -->
+            <div class="section-wrapper">
+                <div class="section-inner">
+                    <h2 class="section-title">DATOS_PERSONALES</h2>
+                    <ul class="contact-info">
+                        <li><strong>CIUDAD:</strong> Villarrica, Guairá</li>
+                        <li><strong>NACIMIENTO:</strong> <span class="highlight-cyan"
+                                style="font-weight: normal;">15/01/2003</span></li>
+                        <li><strong>TELÉFONO:</strong> <span class="highlight-yellow"
+                                style="font-weight: normal;">0971608461</span></li>
+                        <li><strong>CORREO:</strong> <span class="highlight-cyan"
+                                style="font-weight: normal;">isaacrojasmaldonado@gmail.com</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Perfil Profesional -->
+            <div class="section-wrapper">
+                <div class="section-inner">
+                    <h2 class="section-title">PERFIL_ACTIVO</h2>
+                    <p>Estudiante de <span class="highlight-yellow">Ingeniería en Sistemas Informáticos</span> en 6º
+                        curso. Orientado al desarrollo de software con experiencia práctica en comercio familiar,
+                        combinando habilidades técnicas con atención al cliente y gestión. <span
+                            class="highlight-cyan">Proactivo, adaptable y listo para integrarse a la red
+                            corporativa.</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habilidades Técnicas -->
+        <div class="section-wrapper">
+            <div class="section-inner">
+                <h2 class="section-title">ARSENAL_TÉCNICO</h2>
+                <div class="badge-container">
+                    <div class="badge">JAVA CORE / POO</div>
+                    <div class="badge">PYTHON SCRIPTS</div>
+                    <div class="badge cyan-badge">MySQL & BASES DE DATOS</div>
+                    <div class="badge cyan-badge">LÓGICA ESTRUCTURADA</div>
+                    <div class="badge">OFIMÁTICA AVANZADA</div>
+                    <div class="badge cyan-badge">INGLÉS BÁSICO</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <!-- Educación -->
+            <div class="section-wrapper">
+                <div class="section-inner">
+                    <h2 class="section-title">BASE_DE_DATOS_MNT</h2>
+
+                    <div class="timeline-item">
+                        <div class="timeline-title highlight-yellow">Ing. en Sistemas Informáticos</div>
+                        <div class="timeline-subtitle">ESTADO: EN CURSO (6º AÑO)</div>
+                        <p>Desarrollo de habilidades en arquitectura de sistemas, programación orientada a objetos
+                            (Java) y bases de datos relacionales (MySQL).</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-title">Colegio PAI Casanello</div>
+                        <div class="timeline-subtitle">EDUCACIÓN SECUNDARIA</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-title">Escuela Niño Salvador</div>
+                        <div class="timeline-subtitle">EDUCACIÓN BÁSICA</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experiencia y Proyectos -->
+            <div class="section-wrapper">
+                <div class="section-inner">
+                    <h2 class="section-title">REGISTROS_DE_SISTEMA</h2>
+
+                    <div class="timeline-item">
+                        <div class="timeline-title highlight-cyan">Proyectos Personales</div>
+                        <div class="timeline-subtitle">DESARROLLO INDEPENDIENTE</div>
+                        <ul>
+                            <li><strong>Sistema de Gestión Java:</strong> Control automatizado de registros y
+                                organización.</li>
+                            <li><strong>App de Control de Ventas:</strong> Aplicación básica para registro de productos,
+                                manejo de datos e inventario.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-title">Ayudante General</div>
+                        <div class="timeline-subtitle">COMERCIO FAMILIAR</div>
+                        <ul>
+                            <li>Atención y procesamiento de transacciones (cliente final).</li>
+                            <li>Manejo de caja y organización sistemática de productos de venta.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-cyber">ESTADO: DISPONIBLE PARA CONTRATO</div>
+    </div>
+</body>
+
+</html>
